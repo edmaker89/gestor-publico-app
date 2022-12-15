@@ -1,0 +1,40 @@
+.sidebar{
+    position: absolute;
+    width: 140px;
+    height: 100%;
+    left: 0;
+    background: #eff1fd;
+    border-right: 0.5px solid #d1d1d1;
+}
+
+.sidebar h4 {
+    padding: 10px;
+    color: rgb(13, 14, 15);
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.side-item {
+    color: rgb(58, 58, 58);
+    display: block;
+    width: 100%;
+    line-height: 60px;
+    text-decoration: none;
+    padding-left: 10px;
+    box-sizing: border-box;
+    transition: 500ms;
+    transition-property: background;
+    
+}
+.side-item:hover {
+    background: #4e8fb4;
+    color: rgb(241, 240, 240);
+
+}
+.side-item ion-icon {
+    padding-right: 10px;
+}
+
+.content {
+    margin-left: 140px;
+    padding: 10px;
+}

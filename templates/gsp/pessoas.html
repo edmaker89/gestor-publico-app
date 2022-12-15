@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GSP | Gestor Ponto Eletronico</title>
+    <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../static/css/sidemenu.css" rel="stylesheet">
+
+    <style>
+        .navbarsup {
+            background: #3b4eb8;
+        }
+
+        .navbarinf {
+            background: #eff1fd;
+        }
+
+        a {
+            text-decoration: none;
+            color: #999;
+        }
+
+        select {
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+
+        select:focus {
+            outline: none;
+        }
+
+        nav {
+            position: relative;
+            background: #2B2B2B;
+            text-align: center;
+            letter-spacing: 1px;
+            -webkit-box-shadow: 2px 2px 3px #888;
+            -moz-box-shadow: 2px 2px 3px #888;
+            box-shadow: 2px 2px 3px #888;
+        }
+
+        .grey-bg {
+            background-color: #F5F7FA;
+        }
+
+        .dash-title {
+
+            padding: 1rem;
+        }
+
+        .card {
+            padding-left: 1rem;
+            border: none;
+            border-radius: 15px;
+            -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        .card .card {
+            padding-left: 1rem;
+        }
+
+        .card-dados {
+            width: min-content;
+            border: solid 1px #b9b7d3;
+            padding: 1rem;
+            margin-right: 1rem;
+        }
+    </style>
+
+</head>
+
+<body>
+    <script>
+        $(document).ready(function () {
+            $(".menu-button").click(function () {
+                $(".menu-bar").toggleClass("open");
+            })
+        })
+    </script>
+    <!-- Header -->
+    <header>
+        <nav class="navbar navbarsup navbar-expand-lg navbar-dark">
+            <!-- Logo -->
+            <div class="container-fluid">
+                <a class="navbar-brand d-flex align-items-center" href="#"><svg xmlns="http://www.w3.org/2000/svg"
+                        width="16" height="16" fill="currentColor" class="bi bi-stopwatch-fill" viewBox="0 0 16 16">
+                        <path
+                            d="M6.5 0a.5.5 0 0 0 0 1H7v1.07A7.001 7.001 0 0 0 8 16a7 7 0 0 0 5.29-11.584.531.531 0 0 0 .013-.012l.354-.354.353.354a.5.5 0 1 0 .707-.707l-1.414-1.415a.5.5 0 1 0-.707.707l.354.354-.354.354a.717.717 0 0 0-.012.012A6.973 6.973 0 0 0 9 2.071V1h.5a.5.5 0 0 0 0-1h-3zm2 5.6V9a.5.5 0 0 1-.5.5H4.5a.5.5 0 0 1 0-1h3V5.6a.5.5 0 1 1 1 0z" />
+                    </svg> <strong class="ms-2">GSP | Gestor Ponto Eletronico</strong></a>
+                <!-- Logado -->
+
+
+
+
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item ms-auto text-light fs-6 fw-semibold align-self-end">Vanessa G.
+                        Nascimento <br> Secretaria Municipal de Saúde</li>
+                    </li>
+                </ul>
+
+
+
+
+
+            </div>
+            <!-- Logado -->
+            <!-- fim de Logo -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            </div>
+        </nav>
+        <nav class="navbar navbarinf navbar-expand-lg navbar-dark">
+            <div class="container-fluid">
+                <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                    <!-- Breadcrumb -->
+                    <ol class="breadcrumb mb-2 mb-lg-0">
+                        <li class="breadcrumb-item"><a href="/">Login</a></li>
+                        <li class="breadcrumb-item"><a href="/acessos">Acessos</a></li>
+                        <li class="breadcrumb-item"><a href="/gsp/home">Ponto Eletronico</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Pessoas</li>
+
+                    </ol>
+                    <!-- Breadcrumb -->
+
+                </div>
+            </div>
+
+        </nav>
+    </header>
+    <!-- fim do header -->
+
+    <!-- Side Menu -->
+    <div class="sidebar">
+        <a class="side-item" href="/gsp/home">
+            <ion-icon name="desktop-outline"></ion-icon>Dashboard
+        </a>
+        <a class="side-item" href="/gsp/pessoas">
+            <ion-icon name="finger-print-outline"></ion-icon></i>Pessoas
+        </a>
+        <a class="side-item" href="/gsp/fechamento">
+            <ion-icon name="calendar-number-outline"></ion-icon></i>Fechamento
+        </a>
+        <a class="side-item" href="/gps/relatorios">
+            <ion-icon name="documents-outline"></ion-icon></i>Relatorios
+        </a>
+    </div>
+    <!-- fim do Side Menu -->
+    <!-- Conteúdo -->
+    <section class="content bg-light">
+        <h4 class=>Pessoas</h4>
+        <p class="">Pode visualizar, editar, excluir e inserir registros para organizar a folha</p>
+        <div class="card p-2 ps-3 bg-white">
+            <!-- pesquisa -->
+            <form action="#">
+                <p>Entre com as informações para buscar pelo Servidores:</p>
+                <div class="row pb-4">
+                    <div class="col-5 col">
+                        <input type="text" class="form-control" placeholder="Nome">
+                    </div>
+                    <div class="col-3 col">
+                        <button type="submit" class="btn btn-primary">Buscar</button>
+                    </div>
+                </div>
+
+
+            </form>
+
+            <!-- tabela -->
+            <p class="fw-semibold">Lista de Colaboradores:</p>
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">Nome</th>
+                        <th scope="col">Cargo</th>
+                        <th scope="col">Unidade</th>
+                        <th scope="col">Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Vanessa G. Nascimento</td>
+                        <td>Recepcionista</td>
+                        <td>Secretaria Municipal de Saúde</td>
+                        <td>
+                            <a href="registros.html" class="btn btn-primary btn-sm">Visualizar</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Vanessa G. Nascimento</td>
+                        <td>Recepcionista</td>
+                        <td>Secretaria Municipal de Saúde</td>
+                        <td>
+                            <a href="registros.html" class="btn btn-primary btn-sm">Visualizar</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Vanessa G. Nascimento</td>
+                        <td>Recepcionista</td>
+                        <td>Secretaria Municipal de Saúde</td>
+                        <td>
+                            <a href="registros.html" class="btn btn-primary btn-sm">Visualizar</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Vanessa G. Nascimento</td>
+                        <td>Recepcionista</td>
+                        <td>Secretaria Municipal de Saúde</td>
+                        <td>
+                            <a href="registros.html" class="btn btn-primary btn-sm">Visualizar</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Vanessa G. Nascimento</td>
+                        <td>Recepcionista</td>
+                        <td>Secretaria Municipal de Saúde</td>
+                        <td>
+                            <a href="registros.html" class="btn btn-primary btn-sm">Visualizar</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Vanessa G. Nascimento</td>
+                        <td>Recepcionista</td>
+                        <td>Secretaria Municipal de Saúde</td>
+                        <td>
+                            <a href="registros.html" class="btn btn-primary btn-sm">Visualizar</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Vanessa G. Nascimento</td>
+                        <td>Recepcionista</td>
+                        <td>Secretaria Municipal de Saúde</td>
+                        <td>
+                            <a href="registros.html" class="btn btn-primary btn-sm">Visualizar</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Vanessa G. Nascimento</td>
+                        <td>Recepcionista</td>
+                        <td>Secretaria Municipal de Saúde</td>
+                        <td>
+                            <a href="registros.html" class="btn btn-primary btn-sm">Visualizar</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Vanessa G. Nascimento</td>
+                        <td>Recepcionista</td>
+                        <td>Secretaria Municipal de Saúde</td>
+                        <td>
+                            <a href="registros.html" class="btn btn-primary btn-sm">Visualizar</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Vanessa G. Nascimento</td>
+                        <td>Recepcionista</td>
+                        <td>Secretaria Municipal de Saúde</td>
+                        <td>
+                            <a href="registros.html" class="btn btn-primary btn-sm">Visualizar</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Vanessa G. Nascimento</td>
+                        <td>Recepcionista</td>
+                        <td>Secretaria Municipal de Saúde</td>
+                        <td>
+                            <a href="registros.html" class="btn btn-primary btn-sm">Visualizar</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Vanessa G. Nascimento</td>
+                        <td>Recepcionista</td>
+                        <td>Secretaria Municipal de Saúde</td>
+                        <td>
+                            <a href="registros.html" class="btn btn-primary btn-sm">Visualizar</a>
+                        </td>
+                    </tr>
+        </div>
+
+
+
+
+
+
+
+    </section>
+
+
+    <!-- fim do conteúdo -->
+
+
+    <!-- footer -->
+    <footer class="bg-light text-center text-lg-start fixed-bottom">
+        <!-- Copyright -->
+        <div class="text-center p-1" style="background-color: #0d2cdf; color: white;">
+            © 2023 Copyright:
+            <a class="text-light" href="http://instagram.com/dougsedmaker" target="_blank">@edmaker</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="../static/js/bootstrap.bundle.min.js"></script>
+    <script src="../static/js/bootstrap.min.js"></script>
+    <script src="../static/js/popper.min.js"></script>
+</body>
+
+</html>
